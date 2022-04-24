@@ -11,35 +11,31 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
+    "package.json",
     "dist"
   ],
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "scripts": {
-    "build:types": "tsc --build",
-    "build:vite": "yarn vite build",
-    "build": "yarn build:vite && yarn build:types",
-    "dev": "yarn vite",
-    "lint:eslint": "yarn eslint ./src --ext js,ts,tsx --max-warnings 0",
-    "lint:stylelint": "yarn stylelint '**/*.ts[x]'",
-    "lint": "yarn lint:eslint && yarn lint:stylelint",
-    "push": "git push --follow-tags origin main",
-    "release": "yarn standard-version && git push --follow-tags origin main",
-    "start": "yarn build:vite -- --watch",
-    "storybook:build": "yarn build-storybook",
-    "storybook:noui": "bash ./tools/storybook_noui.sh",
-    "storybook": "start-storybook -p 6006",
-    "test": "yarn jest",
-    "test:functional": "yarn cypress open",
-    "test:watch": "yarn jest --watch",
-    "test:coverage": "yarn jest --coverage",
-    "test:coverage:typescript": "yarn typescript-coverage-report",
-    "version:push": "git push --follow-tags origin main",
-    "version:bump": "yarn version patch --force",
-    "version:release": "yarn standard-version",
+    "build": "yarn srclaunch build",
+    "qr": "yarn build && yarn srclaunch changesets add --message \"Quick release - patch\" && yarn srclaunch release",
+    "release": "yarn test:coverage && yarn srclaunch release",
+    "test": "yarn srclaunch test",
+    "test:watch": "yarn srclaunch test --watch",
+    "test:coverage": "yarn srclaunch test --coverage",
     "yui": "yarn upgrade-interactive"
   },
   "devDependencies": {
+    "@srclaunch/cli": "^0.1.285",
     "@srclaunch/dx": "^0.1.2",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
