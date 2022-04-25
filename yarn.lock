@@ -1897,7 +1897,7 @@ __metadata:
   resolution: "@srclaunch/a11y@workspace:."
   dependencies:
     "@srclaunch/cli": ^0.1.286
-    "@srclaunch/dx": ^0.1.43
+    "@srclaunch/dx": ^0.1.44
     "@typescript-eslint/eslint-plugin": ^5.21.0
     "@typescript-eslint/parser": ^5.21.0
     eslint: ^8.14.0
@@ -1975,10 +1975,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@srclaunch/dx@npm:^0.1.43":
-  version: 0.1.43
-  resolution: "@srclaunch/dx@npm:0.1.43"
-  checksum: d8026154cb551b81d06e5d193f4e763d3d03e343522013d22b45fde7254296c2c85fa9113d1cff76ef4a227f8a4c74b35bb89b62ab54674c673ea9029d3bfad4
+"@srclaunch/dx@npm:^0.1.44":
+  version: 0.1.44
+  resolution: "@srclaunch/dx@npm:0.1.44"
+  checksum: 6707d49d5a4e4471fdf0471f3ec41d6a67ff7048a97937bfae51d21d538642a2f34f92343af1d675c33b5dbca6065a069be05d67ee2281b45ead2c5b71a3f30c
   languageName: node
   linkType: hard
 
