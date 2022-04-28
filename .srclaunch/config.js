@@ -13,7 +13,7 @@ export default {
   type: ProjectType.Library,
   build: {
     formats: [BuildFormat.ESM, BuildFormat.UMD],
-    platform: BuildPlatform.Node,
+    platform: BuildPlatform.Browser,
     target: BuildTarget.ESNext,
     tool: BuildTool.Vite,
   },
